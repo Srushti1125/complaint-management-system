@@ -1,0 +1,265 @@
+/* styles.css */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Georgia, serif;
+  /* font-family: 'Copperplate', 'Copperplate Gothic Light', 'Arial', sans-serif; */
+}
+
+body {
+  background: linear-gradient(135deg, rgba(227, 242, 253, 0.7), rgba(187, 222, 251, 0.7)), 
+              url('imf.jpg') no-repeat center center fixed;
+  background-size: cover; 
+  justify-content: center;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+h1, h2 {
+  color: #333;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.container, form {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 150%;
+  max-width: 400px;
+}
+
+input[type="text"], input[type="password"], input[type="number"], input[type="date"], select, textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+button {
+  width: 100%;
+  background-color: rgb(96, 182, 233);
+  color: #fff;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: rgb(96, 182, 233);
+}
+
+a {
+  display: block;
+  color: #007bff;
+  text-decoration: none;
+  margin-top: 10px;
+  text-align: center;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Navbar Styling */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 15px;
+  background-color: rgb(96, 182, 233);
+  color: white;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.navbar h1 {
+  font-size: 20px;
+}
+
+/* Table Styling */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+table, th, td {
+  border: 1px solid #ddd;
+}
+
+th, td {
+  padding: 10px;
+  text-align: left;
+}
+
+th {
+  background-color: rgb(96, 182, 233);
+  color: white;
+}
+
+td {
+  background-color: #f9f9f9;
+}
+
+/* Flash message styling */
+.flash-message {
+  width: 90%;
+  max-width: 400px;
+  padding: 10px;
+  margin: 20px auto;
+  border: 1px solid rgb(96, 182, 233);
+  background-color: #e1f0ff;
+  color: rgb(96, 182, 233);
+  text-align: center;
+  border-radius: 5px;
+}
+
+.alert-container {
+  margin: 20px 0;
+}
+
+.alert {
+  padding: 15px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.alert-success {
+  background-color: #d4edda; /* Light green background */
+  color: #155724; /* Dark green text */
+  border: 1px solid #c3e6cb; /* Green border */
+}
+
+.alert-error {
+  background-color: #f8d7da; /* Light red background */
+  color: #721c24; /* Dark red text */
+  border: 1px solid #f5c6cb; /* Red border */
+}
+
+/* Table Styling */
+.table-container {
+  width: 90%;
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: rgb(96, 182, 233);
+  color: white;
+  font-weight: bold;
+}
+
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+tr:hover {
+  background-color: #e0f7fa;
+  cursor: pointer;
+}
+
+button {
+  width: 100%;
+  background-color: rgb(96, 182, 233);
+  color: #fff;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: rgb(96, 182, 233);
+}
+
+a {
+  display: block;
+  color: #007bff;
+  text-decoration: none;
+  margin-top: 10px;
+  text-align: center;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+
+/* Add this to your existing styles */
+
+/* Table Styling */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  font-size: 16px;
+}
+
+th, td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: rgb(96, 182, 233);
+  color: white;
+}
+
+td select {
+  padding: 8px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  background-color: #f9f9f9;
+}
+
+td button {
+  padding: 8px 16px;
+  background-color: rgb(96, 182, 233);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+td button:hover {
+  background-color: rgb(70, 150, 195);
+}
+
+td form {
+  display: inline-block;
+}

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Complaint Form</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="navbar">
+        <h1>Complaint Management System</h1>
+        <a href="{{ url_for('logout') }}">Logout</a>
+    </div>
+    <h2>Register a Complaint</h2>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <div class="alert-container">
+                    {% for category, message in messages %}
+                        <div class="alert alert-{{ category }}">{{ message }}</div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        {% endwith %}
+    <form method="POST">
+        <input type="text" name="complaint_type" placeholder="Complaint Type" required>
+        <textarea name="description" placeholder="Description" required></textarea>
+        <textarea name="location" placeholder="Location" required></textarea>
+        <input type="date" name="complaint_date" required>
+        <select name="department_id" required>
+            <option value="" disabled selected>Select Department</option>
+            {% for dept in departments %}
+            <option value="{{ dept.DepartmentID }}">{{ dept.SubDepartment }}</option>
+            {% endfor %}
+        </select>
+        <button type="submit">Submit</button>
+        <a href="{{ url_for('status') }}">Previous Complaints Status</a>
+    </form>
+</body>
+</html>

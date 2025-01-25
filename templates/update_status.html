@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Update Status</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="navbar">
+        <h1>Complaint Management System</h1>
+        <a href="{{ url_for('logout') }}">Logout</a>
+    </div>
+    <h2>Update Complaint Status</h2>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <div class="alert-container">
+                    {% for category, message in messages %}
+                        <div class="alert alert-{{ category }}">{{ message }}</div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        {% endwith %}
+    <form method="POST">
+        <label for="complaint_id">Select Complaint:</label>
+        <select name="complaint_id" id="complaint_id" required>
+            <option value="" disabled selected>Select Complaint</option>
+            {% for complaint in complaints %}
+            <option value="{{ complaint.ComplaintID }}">{{ complaint.ComplaintID }} - {{ complaint.Description }}</option>
+            {% endfor %}
+        </select>
+        
+        <label for="status_id">Select Status:</label>
+        <select name="status_id" id="status_id" required>
+            <option value="" disabled selected>Select Status</option>
+            <option value="Resolved">Resolved</option>
+            <option value="In Progress">In Progress</option>
+            <option value="Pending">Pending</option>
+        </select>
+        
+        <label for="resolution_date">Resolution Date:</label>
+        <input type="date" name="resolution_date" required>
+        
+        <button type="submit">Update Status</button>
+    </form>
+</body>
+</html>
+
+

@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Complaint Management System</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f1f1f1;
+        }
+
+        /* Header Section */
+        header {
+            background-color: #224da8;
+            width : 100%;
+            color: white;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header .logo {
+            font-size: 30px;
+            font-weight: bold;
+        }
+
+        header nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 18px;
+        }
+
+        header nav a:hover {
+            text-decoration: underline;
+        }
+
+        /* Hero Section */
+        .hero {
+            background-image: url(''); /* Replace with your actual image */
+            background-size: cover;
+            background-position: center;
+            color: rgb(0, 16, 60);
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 22px;
+            margin-bottom: 30px;
+        }
+
+        .cta-button {
+            background-color: #224da8;
+            color: white;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 18px;
+            transition: background-color 0.3s;
+        }
+
+        .cta-button:hover {
+            background-color: #224da8;
+        }
+
+        /* User Type Section */
+        .user-type {
+            display: flex;
+            justify-content: center;
+            margin-top: 40px;
+        }
+
+        .user-type a {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #555;
+            text-decoration: none;
+            margin: 0 20px;
+            font-size: 18px;
+        }
+
+        .user-type a i {
+            font-size: 48px;
+            margin-bottom: 10px;
+        }
+
+        .user-type a:hover {
+            color: #224da8;
+        }
+
+        /* Features Section */
+        .features {
+            display: flex;
+            justify-content: space-around;
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .feature {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 30%;
+            transition: transform 0.3s ease;
+        }
+
+        .feature:hover {
+            transform: translateY(-10px);
+        }
+
+        .feature i {
+            font-size: 50px;
+            color: #224da8;
+            margin-bottom: 15px;
+        }
+
+        /* Footer Section */
+        footer {
+            background-color: #333;
+            width: 100%;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        footer .social-icons i {
+            margin: 0 10px;
+            font-size: 24px;
+            color: #224da8;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .features {
+                flex-direction: column;
+            }
+
+            .feature {
+                width: 80%;
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div>Complaint Management</div>
+    </header>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <h1> Every Complaint Counts!</h1>
+        <p>Submit complaints, track resolutions, and make your voice heard.</p>
+        <a href="{{ url_for('complaint_form') }}" class="cta-button">Submit a Complaint</a>
+    </div>
+
+    <!-- User Type Section -->
+    <section class="user-type">
+        <a href="{{ url_for('citizen_login') }}">
+            <i class="fas fa-user-circle"></i>
+            Citizen Login
+        </a>
+        <a href="{{ url_for('department_login') }}">
+            <i class="fas fa-building"></i>
+            Department Login
+        </a>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="feature">
+            <i class="fas fa-paper-plane"></i>
+            <h3>Easy Complaint Submission</h3>
+            <p>Submit complaints effortlessly from anywhere, at any time.</p>
+        </div>
+        <div class="feature">
+            <i class="fas fa-tasks"></i>
+            <h3>Track Status</h3>
+            <p>Track the status of your complaints and get updates on resolutions.</p>
+        </div>
+        <div class="feature">
+            <i class="fas fa-users"></i>
+            <h3>Get Involved</h3>
+            <p>Join community initiatives and be part of making the city a better place.</p>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>Contact us: contact@complaintmanagement.com | +123 456 7890</p>
+        <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+    </footer>
+</body>
+</html>

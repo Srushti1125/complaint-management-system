@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Status</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="navbar">
+        <h1>Complaint Management System</h1>
+        <a href="{{ url_for('logout') }}">Logout</a>
+    </div>
+    <h2>Your Complaints</h2>
+    <table>
+        <tr>
+            <th>Complaint ID</th>
+            <th>Type</th>
+            <th>Description</th>
+            <th>Date</th>
+            <th>Status</th>
+        </tr>
+        {% for complaint in complaints %}
+        <tr>
+            <td>{{ complaint.ComplaintID }}</td>
+            <td>{{ complaint.ComplaintType }}</td>
+            <td>{{ complaint.Description }}</td>
+            <td>{{ complaint.ComplaintDate }}</td>
+            <td>{{ complaint.Status }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
