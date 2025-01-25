@@ -12,6 +12,6 @@ This project emphasizes a user-friendly interface, streamlined operations, and a
 - Admin Dashboard: For municipal authorities to assign and monitor tasks.
 
 **Technologies Used**
-Frontend: HTML, CSS
-Backend: Python (Flask) 
-Database: MySQL
+- Frontend: HTML, CSS
+- Backend: Python (Flask) 
+- Database: MySQL
